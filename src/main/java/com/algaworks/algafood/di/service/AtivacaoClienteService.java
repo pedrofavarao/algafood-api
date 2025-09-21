@@ -15,6 +15,16 @@ public class AtivacaoClienteService {
 	@TipoDoIdentificador(NivelUrgencia.SEM_URGENCIA)
 	private Notificador notificador;
 	
+//	@PostConstruct
+	private void init() {
+		System.out.println("INIT");
+	}
+	
+//	@PreDestroy
+	private void destroy() {
+		System.out.println("DESTROY");
+	}
+	
 	
 	public void ativar(Cliente cliente) {
 		cliente.ativar();

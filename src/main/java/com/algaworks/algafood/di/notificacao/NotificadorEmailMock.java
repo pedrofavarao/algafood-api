@@ -11,31 +11,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Component
-@Profile("prod")
-
-//Permite definir a prioridade da injeção do bean com essa anotação
-//@Primary
-
+@Profile("dev")
 @TipoDoIdentificador(NivelUrgencia.SEM_URGENCIA)
-public class NotificadorEmail implements Notificador {
-	
-	public NotificadorEmail() {
-		System.out.println("Notificador e-mail prod");
-	}
-
+public class NotificadorEmailMock implements Notificador{
 	private boolean caixaAlta;
+	
+	public NotificadorEmailMock() {
+		System.out.println("Notificador e-mail dev");
+	}
 	
 	public void notificar(Cliente cliente, String mensagem) {
 		mensagem = caixaAlta ? mensagem.toUpperCase() : mensagem;
-		System.out.printf("Notificando %s através do e-mail %s: %s\n", 
+		System.out.printf("MOCK: Notificando %s através do e-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);
-	}
-
-	public boolean isCaixaAlta() {
-		return caixaAlta;
-	}
-
-	public void setCaixaAlta(boolean caixaAlta) {
-		this.caixaAlta = caixaAlta;
 	}
 }
