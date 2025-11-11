@@ -1,5 +1,10 @@
 package com.algaworks.algafood.di.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Cliente {
 
 	private String nome;
@@ -11,22 +16,6 @@ public class Cliente {
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public boolean isAtivo() {
-		return ativo;
 	}
 	
 	public void ativar() {
