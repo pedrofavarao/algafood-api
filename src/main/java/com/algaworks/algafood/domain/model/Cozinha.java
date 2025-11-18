@@ -11,12 +11,14 @@ import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "cozinha")
 @Getter
 @Setter
 @EqualsAndHashCode
+@ToString
 public class Cozinha {
 	
 	@Id
